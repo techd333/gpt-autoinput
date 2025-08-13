@@ -1,0 +1,26 @@
+{
+  "name": "ChatGPTAutoInput",
+  "description": "テキストファイルから、ChatGPTへの自動入力と実行を行います",
+  "version": "1.0",
+  "manifest_version": 3,
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "css": ["css/tfap-window.css"],
+      "js": ["content.js"]
+    }
+  ]
+}

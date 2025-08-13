@@ -1,0 +1,302 @@
+#tfap-window {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    min-width: 400px;
+    max-width: 400px;
+    font-family: 'Segoe UI', 'Meiryo', sans-serif;
+    user-select: none;
+}
+
+#tfap-window.minimum {
+    border: transparent;
+    background: transparent;
+    box-shadow: none;
+    min-width: 0;
+}
+
+#tfap-header {
+    background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+    color: #fff;
+    padding: 6px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#tfap-header.minimum {
+    background: transparent;
+}
+
+.tfap-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 16px;
+}
+
+.tfap-header-title {
+    font-weight: 600;
+}
+
+.tfap-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background: firebrick;
+}
+
+#tfap-min-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tfap-min-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+#tfap-body {
+    padding: 24px;
+    max-width: 1536px;
+    margin: 0 auto;
+}
+
+/* ファイル入力エリア */
+#tfap-file-area {
+    margin-bottom: 24px;
+}
+
+.tfap-file-drop-zone {
+    position: relative;
+}
+
+#tfap-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#tfap-file-input.disabled {
+    cursor: unset;
+}
+
+.tfap-drop-area {
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    background: #f9fafb;
+    transition: all 0.2s;
+}
+
+.tfap-drop-area.disabled {
+    opacity: 0.2;
+}
+
+.tfap-drop-area:hover {
+    border-color: #60a5fa;
+    background: #eff6ff;
+}
+
+.tfap-drop-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.tfap-drop-icon {
+    width: 64px;
+    height: 64px;
+    background: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tfap-drop-icon svg {
+    width: 32px;
+    height: 32px;
+    color: #2563eb;
+}
+
+.tfap-drop-text {
+    color: #374151;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+#tfap-file-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* コントロール */
+#tfap-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.tfap-btn {
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tfap-btn:hover {
+    transform: scale(1.05);
+}
+
+.tfap-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+#tfap-start-btn {
+    background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+    color: #fff;
+}
+
+#tfap-start-btn:hover:not(:disabled) {
+    background: linear-gradient(90deg, #16a34a 0%, #15803d 100%);
+}
+
+#tfap-stop-btn {
+    background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+    color: #fff;
+}
+
+#tfap-stop-btn:hover {
+    background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.tfap-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.tfap-hidden {
+  display: none;
+}
+
+/* プログレスエリア */
+#tfap-progress-area {
+    background: #f3f4f6;
+    border-radius: 12px;
+    padding: 24px 24px 12px;
+}
+
+.tfap-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#tfap-progress-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.tfap-progress-time {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.tfap-progress-bar-container {
+    width: 100%;
+    background: #e5e7eb;
+    border-radius: 12px;
+    height: 12px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
+}
+
+#tfap-progress-bar {
+    background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+    height: 12px;
+    border-radius: 12px;
+    transition: width 0.5s ease-out;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    width: 0%;
+}
+
+.tfap-status-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#tfap-status-message {
+    color: #2563eb;
+    font-weight: 500;
+}
+
+/* エラーエリア */
+#tfap-error-area {
+    display: none;
+    margin-top: 24px;
+    padding: 16px;
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    border-radius: 8px;
+}
+
+.tfap-error-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tfap-error-icon {
+    flex-shrink: 0;
+}
+
+.tfap-error-icon svg {
+    width: 20px;
+    height: 20px;
+    color: #ef4444;
+}
+
+.tfap-error-message {
+    color: #b91c1c;
+    font-weight: 500;
+}
