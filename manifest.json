@@ -16,10 +16,10 @@
     "scripting",
     "tabs"
   ],
+  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": ["https://chatgpt.com/*"],
-      "css": ["css/tfap-window.css"],
       "js": ["content.js"]
     }
   ]
